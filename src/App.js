@@ -8,6 +8,8 @@ import {
   Header
 } from "semantic-ui-react";
 
+import PuppyList from './Components/PuppyList';
+
 function App() {
 
   let activeItem = 'puppies';
@@ -52,9 +54,7 @@ function App() {
       <Grid padded columns={2} style={{ minHeight: '90vh', backgoundColor: '#ffcdd2' }}>
         {/* List */}
         <Grid.Column width={10}>
-          <Segment raised>
-            List
-          </Segment>
+          <PuppyList />
 
         </Grid.Column>
         {/* Edit Item */}
