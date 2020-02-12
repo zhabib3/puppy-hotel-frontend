@@ -1,41 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  Segment
+  Segment, Item
 } from "semantic-ui-react";
+import PuppyItem from "./PuppyItem";
 
-const DUMMY_DATA = [
-  {
-    name: 'Rover',
-    breed: 'Corgi',
-    age: 5
-  },
-  {
-    name: 'Rover',
-    breed: 'Corgi',
-    age: 5
-  },
-  {
-    name: 'Rover',
-    breed: 'Corgi',
-    age: 5
-  },
-  {
-    name: 'Rover',
-    breed: 'Corgi',
-    age: 5
-  },
-  {
-    name: 'Rover',
-    breed: 'Corgi',
-    age: 5
-  },
-];
+function PuppyList(props) {
 
-function PuppyList() {
+  const puppies = props.puppies;
+
+
+
   return (
-    <Segment raised>
-      List of puppies
-    </Segment>
+    <Segment.Group raised>
+      <Segment>Search Bar</Segment>
+      <Segment>
+        <Item.Group relaxed divided>
+          {puppies.map(puppy => {
+            return (
+              <PuppyItem puppy={puppy} />
+            );
+          })}
+        </Item.Group>
+      </Segment>
+    </Segment.Group>
   );
 }
 
