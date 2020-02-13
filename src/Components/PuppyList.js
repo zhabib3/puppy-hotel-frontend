@@ -4,22 +4,14 @@ import {
 } from "semantic-ui-react";
 import PuppyItem from "./PuppyItem";
 
-function PuppyList(props) {
-
-  const puppies = props.puppies;
-  const setSelectedPuppy = props.setSelectedPuppy;
-
+function PuppyList() {
 
   return (
     <Segment.Group raised>
       <Segment><Header as="h3" content="List of Puppers" /></Segment>
       <Segment>
         <Item.Group relaxed divided>
-          {puppies.map(puppy => {
-            return (
-              <PuppyItem setSelectedPuppy={setSelectedPuppy} puppy={puppy} />
-            );
-          })}
+          <PuppyItem />
         </Item.Group>
       </Segment>
     </Segment.Group>

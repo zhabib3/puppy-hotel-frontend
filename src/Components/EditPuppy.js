@@ -4,23 +4,22 @@ import {
   Button
 } from "semantic-ui-react";
 
-export default function EditPuppy(props) {
+export default function EditPuppy() {
 
-  const puppyInfo = props.selectedPuppy;
 
   return (
     <Form>
       <Form.Field>
         <label>Name</label>
-        <input placeholder={puppyInfo.name} />
+        <input placeholder='' />
       </Form.Field>
       <Form.Field>
         <label>Breed</label>
-        <input placeholder={puppyInfo.breed} />
+        <input placeholder='' />
       </Form.Field>
       <Form.Field>
         <label>Age (in months)</label>
-        <input placeholder={puppyInfo.age} />
+        <input placeholder='' />
       </Form.Field>
 
       <Button secondary type='submit'>Change Puppy Info</Button>

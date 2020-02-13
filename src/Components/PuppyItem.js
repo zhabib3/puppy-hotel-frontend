@@ -3,27 +3,20 @@ import {
   Item, Button
 } from "semantic-ui-react";
 
-export default function PuppyItem(props) {
-  const puppy = props.puppy;
-  const setSelectedPuppy = props.setSelectedPuppy;
-
-  // Function called when Edit button is clicked
-  const onEditClick = () => {
-    setSelectedPuppy(puppy);
-  }
+export default function PuppyItem() {
 
   return (
     <Item>
-      <Item.Image size='tiny' src={`/images/${puppy.breed}.png`} />
+      <Item.Image size='tiny' src='' />
 
       <Item.Content>
-        <Item.Header>{puppy.name}</Item.Header>
+        <Item.Header>Header</Item.Header>
         <Item.Meta>
-          <span>{puppy.breed}</span>
+          <span>Breed</span>
         </Item.Meta>
-        <Item.Description>{puppy.age} months old</Item.Description>
+        <Item.Description>Age in months</Item.Description>
         <Item.Extra>
-          <Button labelPosition="left" icon="edit" floated="right" content="Edit" onClick={onEditClick} />
+          <Button labelPosition="left" icon="edit" floated="right" content="Edit" />
           <Button color="red" labelPosition="left" icon="delete" floated="right" content="Delete" />
         </Item.Extra>
       </Item.Content>

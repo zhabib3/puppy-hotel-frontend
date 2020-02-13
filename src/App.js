@@ -47,17 +47,10 @@ const DUMMY_DATA = [
 
 function App() {
 
-  // Menu page
+  // Menu page selector
   let activeItem = 'puppies';
 
-  // Initialize the list of puppies
-  const [puppies, setPuppies] = useState(DUMMY_DATA);
-  // Initialize currently selected puppy for editing
-  const [selectedPuppy, setSelectedPuppy] = useState(DUMMY_DATA[0]);
-
-  const handleItemClick = () => {
-    console.log("Menu item clicked");
-  }
+  // TODO: Initialize the list of puppies
 
   return (
     <div style={{ backgroundColor: '#79dce8' }}>
@@ -78,12 +71,10 @@ function App() {
             <Menu.Item
               name='Puppies'
               active={activeItem === 'puppies'}
-              onClick={handleItemClick}
             />
             <Menu.Item
               name='Rooms'
               active={activeItem === 'rooms'}
-              onClick={handleItemClick}
             />
 
           </Menu.Menu>
@@ -91,23 +82,26 @@ function App() {
         </Menu>
       </Segment>
 
-      {/* Body */}
+      {/* Body Page */}
       <Grid padded columns={2} style={{ minHeight: '90vh' }}>
         <Grid.Row>
           {/* List Panel */}
           <Grid.Column width={8}>
-            <PuppyList setSelectedPuppy={setSelectedPuppy} puppies={puppies} />
+            <PuppyList />
           </Grid.Column>
 
           {/* Edit and Add Panels */}
           <Grid.Column width={8}>
+            {/* Edit Component */}
             <Segment raised>
               <Header as="h3">Edit Puppy Info</Header>
-              <EditPuppy selectedPuppy={selectedPuppy} />
+              <EditPuppy />
             </Segment>
+
+            {/* Add Component */}
             <Segment raised>
               <Header as="h3">Add New Puppy</Header>
-              <AddPuppy puppyList={puppies} addPuppyHandler={setPuppies} />
+              <AddPuppy/>
             </Segment>
           </Grid.Column>
         </Grid.Row>
