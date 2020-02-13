@@ -1,10 +1,16 @@
 import React from 'react';
 import {
-  Item, Button, Label
+  Item, Button
 } from "semantic-ui-react";
 
 export default function PuppyItem(props) {
   const puppy = props.puppy;
+  const setSelectedPuppy = props.setSelectedPuppy;
+
+  // Function called when Edit button is clicked
+  const onEditClick = () => {
+    setSelectedPuppy(puppy);
+  }
 
   return (
     <Item>
@@ -17,10 +23,10 @@ export default function PuppyItem(props) {
         </Item.Meta>
         <Item.Description>{puppy.age} months old</Item.Description>
         <Item.Extra>
-          <Button labelPosition="left" icon="edit" floated="right" content="Edit" />
+          <Button labelPosition="left" icon="edit" floated="right" content="Edit" onClick={onEditClick} />
           <Button color="red" labelPosition="left" icon="delete" floated="right" content="Delete" />
         </Item.Extra>
       </Item.Content>
     </Item>
-  )
+  );
 }

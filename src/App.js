@@ -13,26 +13,31 @@ import AddPuppy from './Components/AddPuppy';
 
 const DUMMY_DATA = [
   {
+    id: 1,
     name: 'Rover',
     breed: 'Corgi',
     age: 5
   },
   {
+    id: 2,
     name: 'Bubbles',
     breed: 'golden-retriever',
     age: 2
   },
   {
+    id: 3,
     name: 'Sonic',
     breed: 'bulldog',
     age: 3
   },
   {
+    id: 4,
     name: 'Rufus',
     breed: 'greyhound',
     age: 1
   },
   {
+    id: 5,
     name: 'Acorn',
     breed: 'chihuahua',
     age: 4.5
@@ -55,7 +60,7 @@ function App() {
   }
 
   return (
-    <div style={{ backgroundColor: '#4DD0E1' }}>
+    <div style={{ backgroundColor: '#79dce8' }}>
       {/* Nav */}
       <Segment inverted style={{ borderRadius: 0 }}>
         <Menu inverted pointing secondary>
@@ -87,11 +92,11 @@ function App() {
       </Segment>
 
       {/* Body */}
-      <Grid padded columns={2} style={{ minHeight: '90vh', backgoundColor: '#ffcdd2' }}>
+      <Grid padded columns={2} style={{ minHeight: '90vh' }}>
         <Grid.Row>
           {/* List Panel */}
           <Grid.Column width={8}>
-            <PuppyList puppies={puppies} />
+            <PuppyList setSelectedPuppy={setSelectedPuppy} puppies={puppies} />
           </Grid.Column>
 
           {/* Edit and Add Panels */}
@@ -102,7 +107,7 @@ function App() {
             </Segment>
             <Segment raised>
               <Header as="h3">Add New Puppy</Header>
-              <AddPuppy />
+              <AddPuppy puppyList={puppies} addPuppyHandler={setPuppies} />
             </Segment>
           </Grid.Column>
         </Grid.Row>

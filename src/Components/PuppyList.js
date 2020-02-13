@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import {
-  Segment, Item
+  Segment, Item, Header
 } from "semantic-ui-react";
 import PuppyItem from "./PuppyItem";
 
 function PuppyList(props) {
 
   const puppies = props.puppies;
-
+  const setSelectedPuppy = props.setSelectedPuppy;
 
 
   return (
     <Segment.Group raised>
-      <Segment>Search Bar</Segment>
+      <Segment><Header as="h3" content="List of Puppers" /></Segment>
       <Segment>
         <Item.Group relaxed divided>
           {puppies.map(puppy => {
             return (
-              <PuppyItem puppy={puppy} />
+              <PuppyItem setSelectedPuppy={setSelectedPuppy} puppy={puppy} />
             );
           })}
         </Item.Group>
