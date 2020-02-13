@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
 import {
   Grid,
   Image,
@@ -54,6 +55,22 @@ function App() {
   const [puppies, setPuppies] = useState(DUMMY_DATA);
   // Initialize currently selected puppy for editing
   const [selectedPuppy, setSelectedPuppy] = useState(DUMMY_DATA[0]);
+
+  // // Function that makes api request
+  // const FetchPuppyList = async () => {
+  //   const puppyListData = await axios.get("http://localhost:3000/puppies/");
+  //   console.log(puppyListData);
+  //   return puppyListData;
+  // }
+
+  // // Pull Puppy list from the server
+  // useEffect(() => {
+  //   // Make API call
+  //   const puppyListData = FetchPuppyList();
+  //   // Update puppies hook
+  //   setPuppies(puppyListData);
+
+  // }, [])
 
   const handleItemClick = () => {
     console.log("Menu item clicked");
